@@ -5,6 +5,23 @@
 
 
 {% block main %}
+<div class="users_login">
+    <form class="login_form" method="post">
+        {% csrf_token %}
 
+        <div class="form_input">
+            <label for="{{ form.username.id_for_label }}" class="form_label">Username</label>
+            {{ form.username }}
+        </div>
+        <div class="form_input">
+            <label for="{{ form.password.id_for_label }}" class="form_label">Password</label>
+            {{ form.password }}
+        </div>
+        <div class="text-danger form_input">
+            {{ form_error }}
+        </div>
+        <button type="submit" class="auth_button">Login</button>
+    </form>
+</div>
 
 {% endblock  %}

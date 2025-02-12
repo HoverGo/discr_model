@@ -12,6 +12,7 @@ a {
 
 .head {
     margin: 15px 0;
+    margin-bottom: 50px;
 }
 
 .objects_nav {
@@ -44,7 +45,6 @@ a {
 /* OBJECTS SCREEN */
 
 .objects_screen {
-    margin-top: 50px;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -75,4 +75,42 @@ a {
 
 .object:hover {
     background-color: rgb(10, 205, 124);
+}
+
+/* AUTH */
+
+.users_login {
+}
+
+.login_form {
+    margin: 0 auto;
+    border: 1px solid black;
+    width: 250px;
+    height: 250px;
+    text-align: center;
+    border-radius: 10%;
+    padding: 50px 0;
+    box-sizing: border-box;
+}
+
+.form_input {
+    margin-bottom: 15px;
+    text-align: center;
+
+}
+
+.form_label {
+
+}
+
+.auth_button {
+    width: 100px;
+    height: 25px;
+    background-color: white;
+}
+
+.auth_button:hover {
+    background-color: rgb(10, 205, 124);
+    transition: 0.5s ease;
+    cursor: pointer;
 }

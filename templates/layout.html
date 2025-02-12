@@ -13,14 +13,22 @@
             <div class="container">
                 <div class="objects_nav">
                     <ul>
-                        <li><a href="">Список объектов</a></li>
+                        <li><a href="/">Список объектов</a></li>
                     </ul>
                 </div>
-                <div class="objects_nav">
-                    <ul>
-                        <li><a href="/users/auth">Авторизация</a></li>
-                    </ul>
-                </div>
+                {% if not user.is_authenticated %}
+                    <div class="objects_nav">
+                        <ul>
+                            <li><a href="/users/auth/">Авторизация</a></li>
+                        </ul>
+                    </div>
+                {% else %}
+                    <div class="objects_nav">
+                        <ul>
+                            <li><a href="/users/logout/">Выйти</a></li>
+                        </ul>
+                    </div>
+                {% endif %}
             </div>
         </div>
     </header>
