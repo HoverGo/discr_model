@@ -1,0 +1,40 @@
+a {
+    text-decoration: none;
+}
+
+/* BASE */
+.container {
+    width: 1368px;
+    margin: 0 auto;
+}
+
+/* HEADER */
+
+.head {
+    margin: 15px 0;
+}
+
+.objects {
+    display: flex;
+    justify-content: center;
+}
+
+.objects ul{
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+.objects a {
+    margin: 0 10px;
+}
+
+.objects a {
+    font-size: 24px;
+    color: black;
+    transition: 0.5s ease;
+}
+
+.objects a:hover {
+    color: rgb(10, 205, 124)
+}

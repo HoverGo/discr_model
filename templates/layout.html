@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+    <header>
+        <div class="head">
+            <div class="container">
+                <div class="objects">
+                    <ul>
+                        <li><a href="">Список объектов</a></li>
+                    </ul>
+                </div>
+                <div class="objects">
+                    <ul>
+                        <li><a href="/users/registration">Регистрация</a></li>
+                        <li><a href="/users/auth">Авторизация</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            {% block main %}
+            {% endblock %}
+        </div>
+    </main>
+
+    <footer>
+
+    </footer>
+
+</body>
+</html>
