@@ -1,3 +1,5 @@
 from django.contrib import admin
+from main.models import ObjectsDiscr, DiscrMatr 
 
-# Register your models here.
+admin.site.register(ObjectsDiscr)
+admin.site.register(DiscrMatr)

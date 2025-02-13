@@ -114,3 +114,65 @@ a {
     transition: 0.5s ease;
     cursor: pointer;
 }
+
+/* OBJECT */
+
+.error_handle_object {
+    text-align: center;
+}
+
+.error_handle_object a {
+    color: black;
+    font-size: 18px;
+    border-bottom: 1px solid black;
+    text-underline-offset: 2px;
+    transition: 0.5s ease;
+}
+
+.error_handle_object a:hover {
+    color: rgb(5, 104, 196);
+    border-bottom: 1px solid rgb(5, 104, 196);
+    font-size: 19px;
+}
+
+.object_info {
+    text-align: center;
+}
+
+.object_info a {
+    color: black;
+    font-size: 18px;
+    border-bottom: 1px solid black;
+    text-underline-offset: 2px;
+    transition: 0.5s ease;
+}
+
+.object_info a:hover {
+    color: rgb(5, 104, 196);
+    border-bottom: 1px solid rgb(5, 104, 196);
+    font-size: 19px;
+}
+
+.object_name h1 {
+    font-size: 48px;
+}
+
+
+.object_description {
+    overflow: hidden;
+    word-wrap: break-word;
+    box-sizing: border-box;
+}
+
+
+.object_description h2 {
+    font-weight: normal;
+}
+
+.object_buttons {
+    margin-top: 50px;
+}
+
+.object_buttons span {
+    margin: 0 15px;
+}

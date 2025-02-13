@@ -22,5 +22,10 @@ class DiscrMatr(models.Model):
     read = models.BooleanField(default=False)
     write = models.BooleanField(default=False)
 
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(fields=['user', 'discr_object'], name='unique_field1_field2')
+        ]
+
     def __str__(self):
         return f"{self.user} - {self.discr_object}"
