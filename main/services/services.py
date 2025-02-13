@@ -18,9 +18,9 @@ def get_object(request, id):
         }
         return data
     
-    discr_object = ObjectsDiscr.objects.filter(id=id)
+    discr_object = ObjectsDiscr.objects.filter(id=id).first()
 
-    if len(discr_object) == 0:
+    if not discr_object:
         data =  {
             'title': "Error! Not found",
             'object': None,
@@ -30,10 +30,10 @@ def get_object(request, id):
 
         return data
 
-    discr_matr = DiscrMatr.objects.filter(user=user, discr_object=discr_object[0])
+    discr_matr = DiscrMatr.objects.filter(user=user, discr_object=discr_object)
 
 
-    if len(discr_matr) == 0 or not discr_matr.first().read:
+    if (len(discr_matr) == 0 or not discr_matr.first().read) and (user != discr_object.owner):
         data = {
             'title': "Error! Not allowed",
             'object': None,
@@ -42,10 +42,15 @@ def get_object(request, id):
         }
         return data
     
+    if (discr_object.owner == user) or (discr_matr.first().write):
+        can_write = True
+    else:
+        can_write = False
+
     data = {
         'title': "Error! Not allowed",
-        'object': discr_object[0],
-        'write': discr_matr.first().write,
+        'object': discr_object,
+        'write': can_write,
         'successfull': True,
         'error': None,
     }

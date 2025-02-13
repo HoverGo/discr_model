@@ -137,6 +137,8 @@ a {
 
 .object_info {
     text-align: center;
+    width: 920px;
+    margin: 0 auto;
 }
 
 .object_info a {
