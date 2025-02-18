@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block main %}
+    <div class="objects_screen">
+        {% for object in objects %}
+        <a href="{{ object.id }}/">
+            <div class="object">
+                <span><p>{{ object.name }}</p></span>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+{% endblock %}
