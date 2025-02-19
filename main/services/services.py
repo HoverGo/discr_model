@@ -105,3 +105,34 @@ def get_role_object(request, id):
     data['write'] = can_write
 
     return data
+
+
+def get_mandat_object(request, id):
+    user = request.user
+
+    auth_error = check_auth(user)
+    if auth_error:
+        return auth_error
+    
+    user_access_class = user.access_class
+    role_object = get_object_or_404(Objects, id=id)
+    object_access_class = role_object.class_object
+
+    if object_access_class <= user_access_class:
+        data = {
+                'title': "Success",
+                'object': role_object,
+                'write': True,
+                'successfull': True,
+                'error': None,
+            }
+    else:
+        data = {
+            'title': "Error! Not allowed",
+            'object': None,
+            'write': False,
+            'successfull': False,
+            'error': "Access not allowed",
+        }
+
+    return data
